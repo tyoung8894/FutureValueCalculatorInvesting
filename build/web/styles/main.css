@@ -1,0 +1,120 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 28, 2016, 12:05:17 AM
+    Author     : Copyright 2016 Tyler Young and William Breen
+*/
+
+html{
+    padding-right: 20%;
+    padding-left: 20%;
+}
+body {
+    border-style: solid;
+    border-color: blue;
+   
+}
+
+#footer {
+    border-top-style: solid;
+    border-color: blue;
+}
+
+h3 {
+    border-top-style: solid;
+    border-color: blue;
+    padding-top: 2%;
+    padding-left: 5%;
+}
+
+#input {
+ padding-left: 15%;
+ padding-right: 15%;
+}
+
+h1 {
+    padding-left: 5%;
+    color: blue;
+}
+
+form label{
+    width: 40%;
+    text-align: right;
+}
+
+form input{
+    width: 60%;
+}
+
+#NumberOfYearsText {
+    width:61.5%;
+}
+
+.NumberOfYears {
+    margin-left: 3%;
+}
+
+p {
+    margin: 1%;
+}
+
+.CalculateButton {
+    width: 110px;
+    margin-left: 22.5%;
+}
+
+#Calculate {
+    background-color: gray;
+}
+
+#calcjsp label{
+   
+    margin-left: 20%;
+    text-align: right;
+}
+
+#calcjsp #numyearslabel {
+    margin-left: 21.5%;
+}
+
+#calcjsp #futurevaluelabel {
+    margin-left: 24.5%;
+}
+
+#error {
+    margin-left: 10%;
+}
+
+@media only screen and (max-width: 400px) {
+    html{
+        width:320px;
+        height:568px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    
+    form input {
+        border-style: solid;
+        border-color: gray;
+    }
+    
+    .CalculateButton {
+        margin-left: 5px;
+    }
+    
+    body #calcjsp {
+        width:320px;
+        height:667px;
+        padding-left: 1%;
+        padding-right: 1%;
+        
+    }
+    html #calc{
+        padding: 5px;
+        width:320px;
+        height:667px;
+    }
+}

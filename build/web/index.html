@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+Copyright 2016 Tyler Young and William Breen
+-->
+<html>
+
+    <head>
+        <title>CSC330 Homework 2</title>
+        <link rel="stylesheet" href="styles/main.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <form action="calculate" method="post">
+       <input type="hidden" name="action" value="add">       
+            <p class="InvestmentAmount"><label>Investment Amount</label>
+            <input id="InvestmentAmountText" name="investmentAmount" type="text" autofocus required/></p>
+            <p class="YearlyInterestRate"><label>Yearly Interest Rate</label>
+            <input id="YearlyInterestRateText" name="yearlyInterestRate" type="text" required/></p>
+            <p class="NumberOfYears"><label>Number Of Years</label>
+            <input id="NumberOfYearsText" name="numberOfYears" type="text" placeholder="Integer number of years" pattern="^\d+$" required/></p>
+            <p class="CalculateButton"><input type="submit" id="Calculate" value="Calculate"/></p> 
+       </form>
+   
+    </body>
+</html>

@@ -16,13 +16,13 @@
  <body id="calcjsp">
     <c:import url="/Includes/header.jsp" />
     <label>Investment Amount:</label>
-    <span>&#36;<elon:currencyFormat currency="${user.investmentAmount}"/></span><br>
+    <span><elon:currencyFormat currency="${user.investmentAmount}"/></span><br>
     <label>Yearly Interest Rate:</label>
     <span>${user.yearlyInterestRate}</span><br>
     <label id="numyearslabel">Number Of Years:</label>
     <span>${user.numberOfYears}</span><br>
     <label id="futurevaluelabel">Future Value:</label>
-    <span>&#36;<elon:currencyFormat currency="${user.futureValue}"/></span><br>
+    <span><elon:currencyFormat currency="${user.futureValue}"/></span><br>
     <div class="column">
     <ul>
         <p><b>Years</b></p>
@@ -36,7 +36,7 @@
     <ul>
         <p><b>Value</b></p>
         <c:forEach items="${madeMoney}" var="number" begin="0" end="${user.numberOfYears}" step="1" varStatus="status">
-            <li>&#36;<elon:currencyFormat currency="${madeMoney[status.index]}"/></li>
+            <li><elon:currencyFormat currency="${madeMoney[status.index]}"/></li>
         </c:forEach>
     </ul>
  </div>

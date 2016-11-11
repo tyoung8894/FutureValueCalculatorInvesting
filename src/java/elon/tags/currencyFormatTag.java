@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+    Document   : currencyFormatTag
+    Created on : Nov 10, 2016, 7:30:51 PM
+    Author     : Tyler Young and Dominic Vernazza
+*/
 package elon.tags;
 
 import javax.servlet.jsp.*;
@@ -26,6 +26,8 @@ public void setCurrency(String currency) {
         double amount = Double.parseDouble(currency);
         DecimalFormat defaultFormat = new DecimalFormat("#,###.00");
         String money = defaultFormat.format(amount);
+        String dolarSign = "$";
+        money = dolarSign + money;
         try {
             JspWriter out = pageContext.getOut();
             out.print(money);

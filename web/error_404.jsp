@@ -13,10 +13,11 @@
         <title>CSC330 Homework 2</title>
     </head>
     <body>
-        <h1>404 Error</h1>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <c:import url="/Includes/errorHeader.jsp" />
         <p id="error">The server was not able to find the file you requested.</br>
             To continue, click the Back button.</p>
-         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+         
          <c:import url="/Includes/footer.jsp" />
     </body>
 </html>

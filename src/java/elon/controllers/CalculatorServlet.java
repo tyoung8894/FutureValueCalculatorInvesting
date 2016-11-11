@@ -41,8 +41,13 @@ public class CalculatorServlet extends HttpServlet {
         String action = request.getParameter("action");
         System.out.println(action);
        
-   
-        if (action.equals("add")){    
+        if (action == null) {
+            action = "join";  
+        }
+        if (action.equals("join")) {
+            url = "/index.jsp";    
+        } 
+        else if (action.equals("add")){    
         String investmentAmount = request.getParameter("investmentAmount");
         System.out.println(investmentAmount);
         String yearlyInterestRate = request.getParameter("yearlyInterestRate");
@@ -76,12 +81,19 @@ public class CalculatorServlet extends HttpServlet {
         System.out.println(user.getFutureValue());
        
         request.setAttribute("user", user);
+       
+       String[] madeMoney = new String[years];
+       double futureValueYears = Double.parseDouble(investmentAmount);
+       for(int i = 0; i < years; i++) {
+           futureValueYears = futureValueYears + (futureValueYears * (Double.parseDouble(yearlyInterestRate)/100));
+           madeMoney[i] = (String.format("%.2f",futureValueYears));
+            
+        }
+       request.setAttribute("madeMoney", madeMoney);
        url = "/calculate.jsp";
         }
         
-        else {
-            url = "/index.jsp";
-                    }
+      
         
     
     getServletContext().getRequestDispatcher(url).forward(request, response);

@@ -1,35 +1,47 @@
+
 <%-- 
     Document   : newjsp
     Created on : Oct 27, 2016, 10:30:51 PM
     Author     : Tyler Young and William Breen
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="elon" uri="/WEB-INF/elon.tld" %>
 <!DOCTYPE html>
-
-
-
-   
  <html id="calc">
      <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta charset="utf-8">
         <title>JSP Page</title> 
+        <link rel="stylesheet" href="styles/main.css"/>
     </head>
- 
  <body id="calcjsp">
-     <jsp:useBean id="user" scope="request" class="elon.business.User"/>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <c:import url="/Includes/header.jsp" />
- <label>Investment Amount:</label>
- <span>&#36;<jsp:getProperty name="user" property="investmentAmount"/></span><br>
+    <c:import url="/Includes/header.jsp" />
+    <label>Investment Amount:</label>
+    <span>&#36;<elon:currencyFormat currency="${user.investmentAmount}"/></span><br>
     <label>Yearly Interest Rate:</label>
-    <span><jsp:getProperty name="user" property="yearlyInterestRate"/></span><br>
+    <span>${user.yearlyInterestRate}</span><br>
     <label id="numyearslabel">Number Of Years:</label>
-    <span><jsp:getProperty name="user" property="numberOfYears"/></span><br>
+    <span>${user.numberOfYears}</span><br>
     <label id="futurevaluelabel">Future Value:</label>
-    <span>&#36;<jsp:getProperty name="user" property="futureValue"/></span><br>
+    <span>&#36;<elon:currencyFormat currency="${user.futureValue}"/></span><br>
+    <div class="column">
+    <ul>
+        <p><b>Years</b></p>
+        <c:forEach items="${madeMoney}" var="number" begin="0" end="${user.numberOfYears}" step="1" varStatus="status">
+            <li>${status.count}</li>
+        </c:forEach>
+            
+    </ul>
+    </div>
+    <div class="column">
+    <ul>
+        <p><b>Value</b></p>
+        <c:forEach items="${madeMoney}" var="number" begin="0" end="${user.numberOfYears}" step="1" varStatus="status">
+            <li>&#36;<elon:currencyFormat currency="${madeMoney[status.index]}"/></li>
+        </c:forEach>
+    </ul>
+ </div>
+    <br>
+    <a href="index.jsp"> Return to Calculator</a>
       <c:import url="/Includes/footer.jsp" />
  </body>
- 
- 
 </html>

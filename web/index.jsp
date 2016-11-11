@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-
     <head>
         <title>CSC330 Homework 2</title>
         <link rel="stylesheet" href="styles/main.css"/>
@@ -17,20 +16,21 @@
     </head>
     
     <body>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <c:import url="/Includes/header.jsp" />
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+     <c:import url="/Includes/header.jsp"/>
      <div id="input">
         <form action="calculate" method="post">
-       <input type="hidden" name="action" value="add">       
+       <input type="hidden" name="action" value="add">
+       
             <p class="InvestmentAmount"><label>Investment Amount</label>
-            <input id="InvestmentAmountText" name="investmentAmount" type="text" autofocus required/></p>
+            <input id="InvestmentAmountText" name="investmentAmount" type="number" min="0" autofocus required/></p>
             <p class="YearlyInterestRate"><label>Yearly Interest Rate</label>
-            <input id="YearlyInterestRateText" name="yearlyInterestRate" type="text" required/></p>
+            <input id="YearlyInterestRateText" name="yearlyInterestRate" type="number" required/></p>
             <p class="NumberOfYears"><label>Number Of Years</label>
             <input id="NumberOfYearsText" name="numberOfYears" type="text" placeholder="Integer number of years" pattern="^\d+$" required/></p>
             <p class="CalculateButton"><input type="submit" id="Calculate" value="Calculate"/></p> 
        </form>
      </div>
-   <c:import url="/Includes/footer.jsp" />
+   <c:import url="/Includes/footer.jsp"/>
     </body>
 </html>
